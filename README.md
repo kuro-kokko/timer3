@@ -25,7 +25,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 
 # Github Pages へのリリース手順
-'vue.config.js'ファイルを作成する
+rootディレクトリにvue.config.jsファイルを作成する
 ```
 module.exports = {
     outputDir: 'docs',
@@ -34,7 +34,7 @@ module.exports = {
   }
 ```
 
-ビルドする('docs'フォルダが作成される)
+ビルドする(docsフォルダが自動生成される)
 ```
 npm run build
 ```
@@ -51,3 +51,12 @@ folder:/docs
 ```
 
 ```https://ユーザー名.github.io/ブランチ名/``` のURLで公開される。
+
+### 上手く反映されない場合
+push後5分程度待っても404が表示される場合は```npm run build```を実行後にpush  
+または ```index.html```を更新後pushをすると反映されます。
+
+### Github Pagesの選定理由
+Githubにpush後設定を変更するだけで公開が可能、かつ更新もpushを行うだけで手軽に試すことができるため。  
+※AWS EC2等でもGithub Actions設定を行えば自動デプロイが可能であるようですが、事前にキー生成やSecret情報の登録が必要になるためこちらほど手軽ではないです  
+Github Pagesにはアカウントに紐づくものとリポジトリ単位に紐づくものの2種類があり、今回は後者を採用しています。
