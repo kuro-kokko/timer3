@@ -24,7 +24,7 @@ npm run lint
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
 
-# Release for Github Pages
+# Github Pages へのリリース手順
 'vue.config.js'ファイルを作成する
 ```
 module.exports = {
